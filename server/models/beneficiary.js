@@ -10,10 +10,10 @@ var beneficiarySchema = new Schema({
 	dob: String,
 	gender: String,
 	docType:{type:String,unique:false},
-	docNumber:{type:String,unique:true},
+	docNumber:{type:String,unique:false},
 	address: String,
 	iccid: {type:String,unique:false},
-	transId: {type:String,unique:true},
+	transId: {type:String,unique:false},
 	terminalId:String,
 	date: String,
 	operator:String
