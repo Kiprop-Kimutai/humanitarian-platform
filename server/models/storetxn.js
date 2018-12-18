@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 //create schema
 storetxnSchema = new Schema({
     transOperation:String,
-	bankCode:String,
-	debitAcc:String,
-	creditAcc:String,
+	debitAccountNo:String,
+	creditAccountNo:String,
 	amount:Number,
 	transId:{type:String,unique:true},
 	terminalId:{type:String},
