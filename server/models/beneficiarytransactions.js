@@ -5,9 +5,11 @@ const Schema = mongoose.Schema;
 beneficiaryTxnSchema = new Schema({
     transOperation:{type:String},
     amount:Number,
-    debiticcid:{type:String},
-    crediticcid:{type:String},
-    transId:{type:String,unique:true},
+    debitAccountNo:{type:String},
+    creditAccountNo:{type:String},
+    transId:{type:String,unique:false},
+    walletID:{type:String},
+    walletBalance:String,
     terminalId:String,
     date:String,
     authMode:String
