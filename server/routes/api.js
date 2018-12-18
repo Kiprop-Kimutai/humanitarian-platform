@@ -12,6 +12,7 @@ const BeneficiaryTxnRoutes = require('./beneficiary-transactions-routes');
 const StoreTxnRoutes = require('./storetxn-routes');
 const BeneficiaryRequestRoutes = require('./beneficiaryrequest-routes');
 const StoreRequestRoutes = require('./storerequestroutes');
+const UsersRequestRoutes = require('./users');
 app.get('/',(req,res,next)=>{
     res.send("ok...");
 })
@@ -26,4 +27,5 @@ app.use('/storetxn',StoreTxnRoutes);
 app.use('/beneficiaryrequest',BeneficiaryRequestRoutes);
 app.use('/beneficiarytxn',BeneficiaryTxnRoutes);
 app.use('/storerequest',StoreRequestRoutes);
+app.use('/users',UsersRequestRoutes);
 module.exports = app;

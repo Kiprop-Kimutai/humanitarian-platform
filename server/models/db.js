@@ -49,3 +49,4 @@ require('./beneficiarytransactions');
 require('./storetxn');
 require('./beneficiaryrequest');
 require('./storerequest');
+require('./usersrequest');
