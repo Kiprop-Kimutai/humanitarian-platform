@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Beneficiary = mongoose.model('Beneficiary');
-var ApiResponse = require('../models/response');
+//var ApiResponse = require('../models/response');
+var BeneficiaryResponse = require('../models/apiresponse/beneficiaryresponse');
 const app = express();
 
 app.get("/", (req,res,next) =>{
@@ -18,7 +19,8 @@ app.post('/enrollbeneficiary',(req,res,next) =>{
         res.json(new ApiResponse(false,"Beneficiary exists"));
         }
         else{
-            res.json(new ApiResponse(true,"successful",[{"100":3500},{"200":4000,"300":5000}]))
+           // res.json(new ApiResponse(true,"successful",[{"100":3500},{"200":4000,"300":5000}]))
+           res.json(new BeneficiaryResponse(true,"100",1,"Success",[{"walletName": "WFP","WalletBalance": 3500,"walletID": "100","currency": "Ksh"	},{"walletName": "IOM","WalletBalance": 4000,"walletID": "200","currency": "Ksh"}]));
         }
     })
 })
