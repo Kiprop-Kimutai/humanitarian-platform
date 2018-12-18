@@ -16,10 +16,9 @@ app.post('/enrollbeneficiary',(req,res,next) =>{
     beneficiary.save((err) =>{
         if(err){
         console.error(err);
-        res.json(new ApiResponse(false,"Beneficiary exists"));
+        res.json(new BeneficiaryResponse(false,"200",1,"Beneficiary  already exist",[]));
         }
         else{
-           // res.json(new ApiResponse(true,"successful",[{"100":3500},{"200":4000,"300":5000}]))
            res.json(new BeneficiaryResponse(true,"100",1,"Success",[{"walletName": "WFP","WalletBalance": 3500,"walletID": "100","currency": "Ksh"	},{"walletName": "IOM","WalletBalance": 4000,"walletID": "200","currency": "Ksh"}]));
         }
     })
@@ -32,12 +31,13 @@ app.post('/updateBeneficiary',(req,res,next) =>{
     Beneficiary.findOneAndUpdate({iccid:beneficiary.iccid},{lastname:beneficiary.lastname},{new:true},(err,rows)=>{
         if(err){
             console.error(err);
-            res.json(new ApiResponse(false,"beneficiary update failed"));
+            res.json(new BeneficiaryResponse(false,"200",1,"Error updating this field",[]));
+            
         }
         else{
             console.log(rows);
             console.log("%d collections affected",rows);
-            res.json(new ApiResponse(true,"success",[{"100":2200}]));
+            res.json(new BeneficiaryResponse(true,"100",1,"Success",[{"walletName": "WFP","WalletBalance": 3500,"walletID": "100","currency": "Ksh"	},{"walletName": "IOM","WalletBalance": 4000,"walletID": "200","currency": "Ksh"}]));
         }
     })
     
