@@ -4,20 +4,18 @@ var Schema = mongoose.Schema;
 //create beneficiary schema
 
 var beneficiarySchema = new Schema({
-    firstname:{type:String},
-	middlename:{type:String},
-	lastname:{type:String},
-	dob:{type:String},
-	gender:{type:String},
-	householdSize:String,
-    docType:String,
-	docNumber:String,
-	address:String,
-	iccid:{type:String,unique:true},
-	products:Object,
-	transId:String,
+	firstname: String,
+	middlename: String,
+	lastname: String,
+	dob: String,
+	gender: String,
+	docType:{type:String,unique:false},
+	docNumber:{type:String,unique:true},
+	address: String,
+	iccid: {type:String,unique:false},
+	transId: {type:String,unique:true},
 	terminalId:String,
-	date:String,
+	date: String,
 	operator:String
 })
 
