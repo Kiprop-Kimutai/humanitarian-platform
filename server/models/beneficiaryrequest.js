@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const beneficiryRequestSchema = new Schema({
     transOperation:String,
     iccid:String,
-    transId:{type:String,unique:true},
+    transId:{type:String,unique:false},
     requestId:String,
     date:String,
     terminalId:String,
