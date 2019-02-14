@@ -13,6 +13,10 @@ const StoreTxnRoutes = require('./storetxn-routes');
 const BeneficiaryRequestRoutes = require('./beneficiaryrequest-routes');
 const StoreRequestRoutes = require('./storerequestroutes');
 const UsersRequestRoutes = require('./users');
+
+
+/******************v2 API**************** */
+const CustomerRoutes = require('./customerroutes');
 app.get('/',(req,res,next)=>{
     res.send("ok...");
 })
@@ -28,4 +32,5 @@ app.use('/beneficiaryrequest',BeneficiaryRequestRoutes);
 app.use('/beneficiarytxn',BeneficiaryTxnRoutes);
 app.use('/storerequest',StoreRequestRoutes);
 app.use('/users',UsersRequestRoutes);
+app.use('/customers',CustomerRoutes);
 module.exports = app;

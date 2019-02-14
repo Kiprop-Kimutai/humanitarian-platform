@@ -8,6 +8,8 @@ app.get("/",(req,res,next) =>{
     res.send("store request working");
 })
 app.post("/storerequest",(req,res,next) =>{
+    console.log("------------");
+    console.log(req.body);
     var storeRequest = new StoreRequest(req.body.storeRequest);
     storeRequest.save((err)=>{
         if(err){
