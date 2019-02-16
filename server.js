@@ -20,8 +20,8 @@ app.get('*',(req,res,next) =>{
     res.send("Page not found..oops");
 })
 //create server
-var server = app.listen(2000,()=>{
-    var address = "127.0.0.1";
+var server = app.listen(process.env.PORT || 2000,()=>{
+    //var address = "127.0.0.1";
     var port  = server.address().port;
-    console.log("server listening at http://%s:%s",address,port);
+    console.log("server listening at PORT %s",port);
 })
