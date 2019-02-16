@@ -17,6 +17,7 @@ const UsersRequestRoutes = require('./users');
 
 /******************v2 API**************** */
 const CustomerRoutes = require('./customerroutes');
+const StoreRoutes = require('./store-routes');
 app.get('/',(req,res,next)=>{
     res.send("ok...");
 })
@@ -33,4 +34,5 @@ app.use('/beneficiarytxn',BeneficiaryTxnRoutes);
 app.use('/storerequest',StoreRequestRoutes);
 app.use('/users',UsersRequestRoutes);
 app.use('/customers',CustomerRoutes);
+app.use('/storerequest',StoreRoutes);
 module.exports = app;
