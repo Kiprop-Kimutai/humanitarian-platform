@@ -14,13 +14,14 @@ app.get('/',(req,res,next) =>{
 })
 
 app.post('/getstorebalance',(req,res,next) =>{
+    console.log(req.body);
     if(req.body.storeBalRequest){
         var resultDesc = [new StoreResultDesc("Organization Account",14190,"SSP"),new StoreResultDesc("WFP Organization Account",10,"SSP")];
         var CustomerBalanceResponse = new storebalanceresponse(true,"0","success/storeBalRequest success",resultDesc);
         res.status(201).send(CustomerBalanceResponse);
     }
     else{
-        res.status(201).send(new storebalanceresponse(false,"303","invalid request method"));
+        res.status(201).send(new storebalanceresponse(false,"303","invalid request body"));
     }
 })
 
