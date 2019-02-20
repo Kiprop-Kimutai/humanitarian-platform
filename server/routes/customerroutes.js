@@ -61,9 +61,23 @@ app.post('/beneficiarytransaction',(req,res,next) =>{
         /*var customerTransaction ={"status": true,"code": "000","message": "success/benfBalRequest success","benTxnResult":[new CustomerTransactionResponse("BT-fcfgffhfrnfefnfdkhgfffjkffkddf",true,"0","success/benTxn success",resultDesc),
                                   new CustomerTransactionResponse("BT-dcgffrejhfdjfjkfhjfjfrjfjddf",true,"0","success/benTxn success",resultDesc1)]};*/
 
-        var customerTransaction ={"status": true,"code": "000","message": "success/benfBalRequest success","benTxnResult":[
+        var customerTransaction ={"status": true,"code": "000","message": "success/benfBalRequest success","resultDesc":{"balances":[
             new CustomerTransactionResponse("M-PESA Account",5815,"SSP"),
-        new CustomerTransactionResponse("WFP Beneficiary Account",0,"SSP")]};
+        new CustomerTransactionResponse("WFP Beneficiary Account",0,"SSP")],
+        "benTxnResult":[ {
+            "originalTransId": "BT-sdfdfxdfccdfvdcdgfdfggfffdffdsvcddffkjfsf",
+            "status": true,
+            "code": "0",
+            "message": "success/benTxn success",
+            "resultDesc": ""
+        },
+        {
+            "originalTransId": "BT-dsfsdffcvddffddcfgdgdfxdfgcfffdsf",
+            "status": true,
+            "code": "0",
+            "message": "success/benTxn success",
+            "resultDesc": ""
+        }]}};
 
         res.status(201).json(customerTransaction);
         }
