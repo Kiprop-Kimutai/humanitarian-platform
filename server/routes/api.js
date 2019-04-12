@@ -34,5 +34,6 @@ app.use('/beneficiarytxn',BeneficiaryTxnRoutes);
 app.use('/storerequest',StoreRequestRoutes);
 app.use('/users',UsersRequestRoutes);
 app.use('/customers',CustomerRoutes);
-app.use('/storerequest',StoreRoutes);
+//app.use('/storerequest',StoreRoutes);
+app.use('/organization',StoreRoutes);
 module.exports = app;

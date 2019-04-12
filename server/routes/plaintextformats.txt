@@ -1,0 +1,104 @@
+
+/***********************************************LINK card*****************************************************/
+
+text/plain request
+iccid|transId|requestId|date|terminalId|authMode|cardIdentifier|userId
+
+text/plain response
+status~code~message~wallet|balance|currency#wallet|balance|currency
+	examples
+	true~0~success~M-PESA Account|2500|SSP#WFP Beneficiary Account|4000|SSP
+	false~303~failed
+
+
+/*****************************************Customer Balance Query******************************
+text/plain request
+iccid|transId|requestId|date|terminalId|authMode|userId
+	example
+	254735843226|BFRQ-1sdfjd0bhbgvdffb9fivsdftlfdbfnbgvfuhjn2jsfdfdhsidgdnhbji|123|20181124|82346731|112|clement
+
+text/plain response
+status~code~message~wallet|balance|currency#wallet|balance|currency
+    examples
+	true~0~success~M-PESA Account|5815|SSP#WFP Beneficiary Account|0|SSP
+	false~303~failed
+
+
+/****************************************Query Balance Org*********************************************/
+text/plain request
+agentAccountNo|transId|terminalId|authMode|userId|date|requestId
+	example
+	000002|WB-jhvfbjbfvfffvhffd|82346731|101|dan3139|20181124|dfdsfsddfssdf
+
+text/plain response
+status~code~message~wallet|balance|currency#wallet|balance|currency
+	examples
+	true~0~success~M-PESA Account|5815|SSP#WFP Beneficiary Account|0|SSP
+	false~303~failed
+
+/*****************************************Query Customer Statement *****************************
+text/plain request
+iccid|transId|requestId|date|terminalId|authMode|walletName|userId
+	example
+	211920000000|BFRQ-tfefsfffdr4t1|123|20181230|82346731|112|M-PESA Account|clement
+
+text/plain response
+status~code~message~ReceiptNumber|TransactionStatus|Currency|Amount|InitiatedTime|Details
+	examples
+	true~0~success~5LF603V5IO|Completed|SSP|12.00|20181215081224|Send Money to 211920000001 - Clement by API2#
+	false~153~failed
+
+/*************************************Query Organization Statement Request *********************************/
+text/plain request
+storeAccount|transId|requestId|date|terminalId|authMode|walletName|currency|userId
+	example
+	000006|BFRQ-tfsdfdhfeffhfffdssvgffft1|123|20190213|82346731|112|Organization Account|SSP|clement
+
+text/plain response
+status~code~message~ReceiptNumber|TransactionStatus|Currency|Amount|InitiatedTime|Details
+	examples
+	true~0~success~6BD803VAPE|Completed|SSP|40.00|20190213140641|Withdraw from 211920000001 - test1 test11 test22#6BD403VAP0|Completed|SSP|10.00|20190213123148|Merchant Store Roll-up to 000002 - DMM
+	false~153~failed
+
+/****************************************card txn  ************************
+text/plain request
+source~count~debitAccountNo~requestId~transOperation|amount|creditAccountNo|transId|walletName|walletBalanceBefore|walletBalanceAfter|terminalId|date|authMode|userId
+	example
+	200|40|000006|BT-dsfsdffcvddffddcfgdgdfxdfgcfffdsf|M-PESA Account|100|100|82346731|20181123|100|clement
+
+text/plain response
+status~code~message~wallet|balance|currency#wallet|balance|currency;originalTransId|status|code|message#originalTransId|status|code|message
+	examples
+	true~0~success~M-PESA Account|60594|SSP#WFP Beneficiary Account|990|SSP;BT-sdfdfxdfccdfvdcdgfdfggfffdffdsvcddffkjfsf|true|0|success#BT-dsfsdffcvddffddcfgdgdfxdfgcfffdsf|true|0|success
+	false~153~failed
+
+/*******************************************************pos txn*****************************************************************************
+text/plain request 
+source~count~requestId~transOperation|amount|creditAccountNo|debitAccountNo|transId|walletName|walletBalanceBefore|walletBalanceAfter|terminalId|date|authMode|userId#transOperation|
+amount|creditAccountNo|creditAccountNo|debitAccountNo|transId|walletName|walletBalanceBefore|walletBalanceAfter|terminalId|date|authMode|userId
+	example
+	pos~2~dsfsdfds~100|10|000006|211920000000|BT-sdfdfvfdnfdffddjfsf|M-PESA Account|100|100|82346731|20181124|100|clement#200|40|000006|211920000000|BT-dsfsdfdvfdfjjdffdfsf|
+	M-PESA Account|100|100|82346731|20181123|100|clement
+	
+text/plain response
+status~code~message~originalTransId|status|code|message#originalTransId|status|code|message
+	examples
+	true~0~success~BT-sdfdfvfdnfdffddjfsf|true|0|success|#BT-dsfsdfdvfdfjjdffdfsf|false|153|malformed txn
+	false~303~failed
+
+
+/***************************************************store TXN ***********************************
+text/plain request
+transOperation|amount|debitAccountNo|creditAccountNo|transId|terminalId|date|authMode|userId|requestId
+	example
+	100|10|000006|000002|dcgfffffdvfdsvffffsffdff|82346731|20181124|100|clement|dsfdsfdsf
+
+text/plain response
+status~code~message~transID|debitPartyName|creditPartyName|debitAccountBalance|creditAccountCurrentBalance|finalizedTime|transactionStatus
+	examples
+	true~0~success~6BE203VBFW|000006 - DMM Store|000002 - DMM|10224.00|14200.00|20190214144741|Completed
+	false~303~failed
+	
+	
+
+	

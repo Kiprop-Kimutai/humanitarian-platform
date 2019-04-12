@@ -52,4 +52,9 @@ app.post('/storetransaction', (req,res,next) =>{
     }
 })
 
+app.post('/statement',(req,res,next) =>{
+    console.log(req.headers);
+    res.status(201).send(JSON.stringify({result:'ok'}))
+})
+
 module.exports = app;

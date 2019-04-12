@@ -21,7 +21,7 @@ app.post('/benbalrequest',(req,res,next) =>{
         var customerbalanceresponse = new CustomerBalanceResponse(
             true,"0","success/benfBalRequest success",resultDesc
         );
-        res.status(201).json((customerbalanceresponse));
+        res.status(201).send((customerbalanceresponse));
     }
     else{
         res.status(201).send(JSON.stringify(new CustomerBalanceResponse(false,0,"invalid request method","")));
@@ -31,6 +31,10 @@ app.post('/benbalrequest',(req,res,next) =>{
 })
 
 app.post('/linkcard',(req,res,next) =>{
+    console.log(req.headers);
+    console.log(req.body);
+    console.log(req.body.split("|"));
+    //console.log(req.headers);
     if(req.body.benRegistration){
         var resultDesc = [new CustomerResultDesc("M-PESA Account",2500,"SSP"),new CustomerResultDesc("WFP Beneficiary Account",4000,"SSP")];
         var linkCardResponse = new LinkCardResponse(true,"0","success/benRegistration success",resultDesc)
