@@ -10,7 +10,7 @@ app.get("/",(req,res,next) =>{
 app.post("/storerequest",(req,res,next) =>{
     console.log("------------");
     console.log(req.body);
-    var storeRequest = new StoreRequest(req.body.storeRequest);
+    /*var storeRequest = new StoreRequest(req.body.storeRequest);
     storeRequest.save((err)=>{
         if(err){
             console.error(err);
@@ -20,7 +20,8 @@ app.post("/storerequest",(req,res,next) =>{
             console.log("success");
             res.json(new ApiResponse(true,"000",[{"100":2200}]));
         }
-    })
+    })*/
+    res.json(new ApiResponse(true,"000",[{"100":2200}]));
 
 })
 module.exports = app;

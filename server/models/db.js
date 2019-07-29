@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
-const dburl ="mongodb://localhost:27017/safaricom";
-//const dburl = "mongodb://testts_new_usr:45T3Sss7@10.11.40.100:27017/testnewts";
+//const dburl ="mongodb://localhost:27017/safaricom";
+const dburl = "mongodb://testts_new_usr:45T3Sss7@10.11.40.100:27017/testnewts";
+// const dburl = 'mongodb://cyrus:Test1234@ds123534.mlab.com:23534/sos';
+
 var gracefullshutdown;
 
 if(process.env.NODE_ENV==='production'){
