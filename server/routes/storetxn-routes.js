@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //const ApiResponse = require('../models/response');
 const StoreTxnResponse = require('../models/apiresponse/storetxnresponse');
 const StoreTxnSchema = mongoose.model("StoreTxnSchema");
-//const StoreBalanceRequest = mongoose.model("StoreBalanceRequest");
+const StoreBalanceRequest = mongoose.model("StoreBalanceRequest");
 const app = express();
 
 app.get('/',(req,res,next)=>{
