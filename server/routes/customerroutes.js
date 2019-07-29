@@ -31,9 +31,6 @@ app.post('/benbalrequest',(req,res,next) =>{
 })
 
 app.post('/linkcard',(req,res,next) =>{
-    console.log(req.headers);
-    console.log(req.body);
-    console.log(req.body.split("|"));
     //console.log(req.headers);
     if(req.body.benRegistration){
         var resultDesc = [new CustomerResultDesc("M-PESA Account",2500,"SSP"),new CustomerResultDesc("WFP Beneficiary Account",4000,"SSP")];

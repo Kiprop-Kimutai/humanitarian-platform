@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 //const api = require('./server/routes/api');
 require('./server/models/db');
 const api = require('./server/routes/api');
-//app.use(bodyParser.json());
-app.use(bodyParser.text());
+app.use(bodyParser.json());
+//app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({extended:false}));
 
 // headers and content type
