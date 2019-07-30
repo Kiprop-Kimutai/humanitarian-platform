@@ -1,9 +1,9 @@
 const customerResultDesc = require('./customerResultDesc');
-function LinkCardResponse(status,code,message,customerResultDesc){
+function LinkCardResponse(status,code,message,resultDesc){
     this.status = status;
     this.code = code;
     this.message = message;
-    this.customerResultDesc = customerResultDesc;
+    this.resultDesc = resultDesc;
 }
 
 module.exports = LinkCardResponse;
