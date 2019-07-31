@@ -100,17 +100,20 @@ posOfflineTransactionResult = [
         "status": true,
         "code": "0",
         "message": "success/benTxn success",
+        "resultDesc":""
     },
     {
         "originalTransId": "BT-fcfgffhfrnfefnfdkhgfffjkffkddf",
         "status": true,
         "code": "0",
         "message": "success/benTxn success",
+        "resultDesc":""
     },
     {
         "originalTransId": "BT-fcfgffhfrnfefnfdkhgfffjkffk3434",
         "status": false,
         "code": "0",
         "message": "Malformed transactions",
+        "resultDesc":""
     }
 ];
