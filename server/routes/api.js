@@ -13,7 +13,7 @@ const StoreTxnRoutes = require('./storetxn-routes');
 const BeneficiaryRequestRoutes = require('./beneficiaryrequest-routes');
 const StoreRequestRoutes = require('./storerequestroutes');
 const UsersRequestRoutes = require('./users');
-
+const testRoutes = require('./test');
 
 /******************v2 API**************** */
 const CustomerRoutes = require('./customerroutes');
@@ -36,4 +36,5 @@ app.use('/users',UsersRequestRoutes);
 app.use('/customers',CustomerRoutes);
 //app.use('/storerequest',StoreRoutes);
 app.use('/organization',StoreRoutes);
+app.use('/testroutes',testRoutes);
 module.exports = app;
