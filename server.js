@@ -22,7 +22,7 @@ app.get('*',(req,res,next) =>{
     res.send("Page not found..oops");
 })
 //create server
-var server = app.listen(process.env.PORT || 2700,()=>{
+var server = app.listen(process.env.PORT,()=>{
     //var address = "192.168.43.228";
     var port  = server.address().port;
     console.log("server listening at PORT %s",port);
